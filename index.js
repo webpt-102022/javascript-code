@@ -87,6 +87,7 @@ const index = arr.indexOf(5); // When I don't know the index
 // console.log(arr.splice(index, 1, 7));
 // console.log(arr);
 
+// ******** ARRAY METHODS **********
 // arr.pop() => Delete last element. Returns deleted element
 // arr.shift() => Delete primer element. Returns deleted element
 // arr.indexOf(elem) => Returns the index of the given element. If the element doesn't exist, returns -1
@@ -104,11 +105,77 @@ const index = arr.indexOf(5); // When I don't know the index
 
 // let total = 0;
 
-arr.forEach((num, i, arr) => { // Arrow function
-  console.log(i, num)
-})
+// arr.forEach((num, i, arr) => { // Arrow function
+//   console.log(i, num)
+// })
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ]
+
+// console.log(matrix[1][2]) // I can access multiple levels
+
+// function sayHello(username) {
+//   console.log(`Hello ${username}`)
+// }
+
+// arr.push(sayHello); // I can add functions to arrays
+// console.log(arr[6]('Gerard')) // I can call functions from arrays
+
+// To get random element from an array we can use Math.random()
+// const names = ['Presidenta', 'GG', 'Guille', 'Marc'];
+// const random = Math.random();
+// console.log(random)
+// console.log(names[random])
 
 
+// ***************+ OBJECTS ***************
+const student = {
+  name: 'Olivia',
+  age: 32,
+  level: 'intermediate',
+  scholarship: true,
+  doSomething: () => {
+    console.log('Bye')
+  },
+  action() {
+    console.log('Hello')
+  }
+}
+
+student.action()
+//console.log(student.age) // Dot notation
+//console.log(student['age']) // Bracket notation
+
+// for (let key in student) {
+//   console.log(key)
+// }
+
+// Object.seal(student);
+// Object.freeze(student);
+student.email = 'olivia@gmail.com'
+student.age = 44;
+console.log('email' in student)
+delete student.level;
+
+console.table(student)
+
+const classRoom = {
+  teacher: { firstName: 'Marcelino', lastName: 'Padberg', age: 25, specialty: 'WEB DEV' },
+  students: [
+    { firstName: 'Aliyah', lastName: 'Schulist', age: 18 },
+    { firstName: 'Cleveland', lastName: 'Towne', age: 28 },
+    { firstName: 'Jan', lastName: 'Quitzon', age: 18 },
+    { firstName: 'Alaina', lastName: 'Runolfsdottir', age: 18 },
+    { firstName: 'Gerhard', lastName: 'Bergstrom', age: 23 }
+  ]
+};
+
+classRoom.teacher.specialty = classRoom.teacher.specialty.toLowerCase();
+classRoom.students[0]['age'] = classRoom.students[0].age + 1;
+console.log(classRoom);
 
 
 
