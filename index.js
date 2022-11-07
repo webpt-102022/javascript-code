@@ -126,7 +126,7 @@ const index = arr.indexOf(5); // When I don't know the index
 
 // To get random element from an array we can use Math.random()
 // const names = ['Presidenta', 'GG', 'Guille', 'Marc'];
-// const random = Math.random();
+// const random = Math.floor(Math.random() * names.length);
 // console.log(random)
 // console.log(names[random])
 
