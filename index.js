@@ -76,7 +76,9 @@ function runCode() {
   }
 }
 
-const arr = [1, 2, 3, 4, 5, 6];
+const arr = [1, 2, 3, 4, 5, [7, 8, 9]];
+console.log(arr[5][2])
+
 const deletedElements = [];
 
 // arr.splice(2, 2, 18, 20, 23); // splice(index, how many to delete, what to add)
@@ -136,6 +138,9 @@ const student = {
   name: 'Olivia',
   age: 32,
   level: 'intermediate',
+  address: {
+    street: 'Pamplona'
+  },
   scholarship: true,
   doSomething: () => {
     console.log('Bye')
@@ -145,7 +150,9 @@ const student = {
   }
 }
 
-student.action()
+console.log(student.address.street)
+
+// student.action()
 //console.log(student.age) // Dot notation
 //console.log(student['age']) // Bracket notation
 
@@ -157,12 +164,13 @@ student.action()
 // Object.freeze(student);
 student.email = 'olivia@gmail.com'
 student.age = 44;
-console.log('email' in student)
+// console.log('email' in student)
 delete student.level;
 
-console.table(student)
+// console.table(student)
 
 const classRoom = {
+  room: 23,
   teacher: { firstName: 'Marcelino', lastName: 'Padberg', age: 25, specialty: 'WEB DEV' },
   students: [
     { firstName: 'Aliyah', lastName: 'Schulist', age: 18 },
@@ -170,12 +178,47 @@ const classRoom = {
     { firstName: 'Jan', lastName: 'Quitzon', age: 18 },
     { firstName: 'Alaina', lastName: 'Runolfsdottir', age: 18 },
     { firstName: 'Gerhard', lastName: 'Bergstrom', age: 23 }
-  ]
+  ],
+  action: function () {
+    console.log('Hello')
+  },
+  encrypt: Symbol(2),
+  year: undefined,
+  range: null
 };
 
 classRoom.teacher.specialty = classRoom.teacher.specialty.toLowerCase();
-classRoom.students[0]['age'] = classRoom.students[0].age + 1;
-console.log(classRoom);
+classRoom.students[2].age
+
+// ********* SHALLOW COPY VS. DEEP COPY *************
+const names = ['Manolito', 'Perico', 'Zamburano', [1, 2, 3]];
+
+const namesCopy = [];
+for (let i = 0; i < names.length; i++) { // Shallow copy: with loops
+  namesCopy.push(names[i])
+}
+
+namesCopy[3][2] = 22;
+// console.table(names)
+// console.table(namesCopy)
+
+const classRoomCopy = {};
+
+for (let key in classRoom) {
+  classRoomCopy[key] = classRoom[key]
+}
+
+// console.log(classRoomCopy);
+
+function myFuncton
+
+
+
+
+
+
+
+
 
 
 
